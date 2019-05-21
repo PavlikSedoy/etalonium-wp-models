@@ -33,6 +33,98 @@
                 <div class="models__big-title">M</div>
                 <h2 class="about__title section-title">Our models</h2>
             </div>
+
+            <div class="models__gallery">
+
+                <div class="models__gallery_col">
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+                    
+                </div>
+                <!-- /.models__gallery_col -->
+
+                <div class="models__gallery_col">
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                </div>
+                <!-- /.models__gallery_col -->
+                
+                <div class="models__gallery_col">
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                    <article class="models__gallery_item">
+                        <div class="models__gallery_item-bg" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+                        <div class="models__gallery_item_title">
+                            <h4>Stephanie Skinner</h4>
+                        </div>
+                    </article>
+                    <!-- /.models__gallery_item model-item -->
+
+                </div>
+                <!-- /.models__gallery_col -->
+
+            </div>
+            <!-- /.models__gallery-wr -->
         </div>
 
     </section>
