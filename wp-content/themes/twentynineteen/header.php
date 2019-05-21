@@ -10,44 +10,253 @@
  * @subpackage Twenty_Nineteen
  * @since 1.0.0
  */
-?><!doctype html>
-<html <?php language_attributes(); ?>>
+?>
+
+
+<!DOCTYPE html>
+<html lang="En">
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="profile" href="https://gmpg.org/xfn/11" />
-	<?php wp_head(); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <title><?php bloginfo('name') ?></title>
+    <?php wp_head(); ?>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= get_template_directory_uri() ?>/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?= get_template_directory_uri() ?>/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri() ?>/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= get_template_directory_uri() ?>/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri() ?>/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= get_template_directory_uri() ?>/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?= get_template_directory_uri() ?>/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
 </head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentynineteen' ); ?></a>
+<body>
 
-		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
 
-			<div class="site-branding-container">
-				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-			</div><!-- .site-branding-container -->
+<!--<div id="preloader-overlayer">-->
 
-			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
-				<div class="site-featured-image">
-					<?php
-						twentynineteen_post_thumbnail();
-						the_post();
-						$discussion = ! is_page() && twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null;
+<!--<div class="vert-centered-wrap">-->
+<!--<div class="vert-centered">-->
+<!--<span class="loader">-->
 
-						$classes = 'entry-header';
-					if ( ! empty( $discussion ) && absint( $discussion->responses ) > 0 ) {
-						$classes = 'entry-header has-discussion';
-					}
-					?>
-					<div class="<?php echo $classes; ?>">
-						<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
-					</div><!-- .entry-header -->
-					<?php rewind_posts(); ?>
-				</div>
-			<?php endif; ?>
-		</header><!-- #masthead -->
+<!--<span class="loader-inner">-->
 
-	<div id="content" class="site-content">
+<!--<div class="wrap">-->
+
+
+
+<!--<svg class="spin-logo-front" x="0px" y="0px" width="153.07px" height="153.07px" viewBox="0 0 153.07 153.07"-->
+<!--style="enable-background:new 0 0 153.07 153.07;" xml:space="preserve">-->
+<!--<defs>-->
+<!--</defs>-->
+<!--<path style="fill:#262626;" d="M76.534,0C34.333,0,0,34.334,0,76.538c0,42.2,34.333,76.532,76.534,76.532-->
+<!--c42.201,0,76.536-34.332,76.536-76.532C153.07,34.334,118.736,0,76.534,0z M70.108,38.599c-7.833,1.319-15.085,5.038-20.733,10.731-->
+<!--c-5.642,5.645-9.355,12.907-10.665,20.717v0.194h57.056v12.676H38.735c1.329,7.777,5.03,14.991,10.656,20.604-->
+<!--c5.644,5.677,12.9,9.399,20.717,10.715l0.133-0.001V95.767h12.763v18.412c7.689-1.361,14.84-5.055,20.411-10.658l2.498-2.489-->
+<!--l7.492,7.486v0.03l1.401,1.4c-0.452,0.526-0.933,1.019-1.401,1.515c-1.03,1.09-2.074,2.136-3.189,3.112l-0.011-0.043-->
+<!--c-0.355,0.313-0.707,0.623-1.059,0.92l-1.073,0.906c-0.226,0.186-0.465,0.356-0.691,0.526c-0.185,0.154-0.382,0.297-0.581,0.44-->
+<!--l-0.817,0.607c-1.455,1.047-2.963,2.009-4.515,2.888c-0.03,0.011-0.073,0.04-0.143,0.084c-0.083,0.057-0.156,0.1-0.226,0.129-->
+<!--l-1.083,0.577c-0.949,0.513-1.896,0.979-2.867,1.402c-0.339,0.143-0.694,0.297-1.057,0.453l-0.355,0.157-->
+<!--c-2.528,1.046-5.136,1.882-7.847,2.519c-0.185,0.03-0.352,0.073-0.524,0.113l-0.422,0.084c-0.167,0.029-0.352,0.073-0.522,0.113-->
+<!--c-0.169,0.043-0.352,0.073-0.524,0.103l-1.439,0.237c-0.296,0.057-0.589,0.1-0.887,0.143c-0.807,0.113-1.665,0.21-2.608,0.297-->
+<!--c-0.286,0.043-0.565,0.057-0.863,0.07l-0.468,0.043c-0.097,0.013-0.196,0.013-0.309,0.013c-0.322,0.013-0.662,0.043-0.987,0.043-->
+<!--c-0.648,0.03-1.296,0.043-1.933,0.043c-0.479,0-0.973,0-1.455-0.013c-0.791-0.03-1.565-0.073-2.342-0.129-->
+<!--c-0.043,0-0.083,0-0.113-0.014c-0.804-0.057-1.595-0.127-2.385-0.226c-0.07-0.013-0.124-0.013-0.183-0.03-->
+<!--c-0.777-0.097-1.538-0.21-2.299-0.339c-0.494-0.097-0.989-0.183-1.482-0.281c-0.412-0.083-0.82-0.186-1.229-0.27-->
+<!--c-0.412-0.1-0.818-0.197-1.226-0.31c-4.023-1.019-7.906-2.548-11.544-4.546c-1.13-0.62-2.23-1.287-3.319-1.98-->
+<!--c-0.296-0.197-0.578-0.383-0.874-0.58c-1.129-0.763-2.23-1.573-3.289-2.419c-0.212-0.173-0.425-0.34-0.621-0.512-->
+<!--c-0.368-0.31-0.747-0.621-1.1-0.947c-0.564-0.466-1.1-0.979-1.637-1.499c-0.296-0.27-0.592-0.553-0.877-0.836v-0.014-->
+<!--c-1.17-1.16-2.27-2.379-3.286-3.625c-0.03-0.043-0.073-0.083-0.113-0.127c-2.598-3.155-4.771-6.58-6.492-10.205-->
+<!--c-0.172-0.367-0.352-0.75-0.524-1.116c-0.691-1.516-1.296-3.072-1.818-4.644c-0.127-0.394-0.255-0.793-0.382-1.186-->
+<!--c-0.242-0.769-0.452-1.532-0.664-2.295c-0.21-0.863-0.411-1.729-0.592-2.605c-0.086-0.41-0.156-0.817-0.242-1.246-->
+<!--c-0.14-0.834-0.266-1.683-0.379-2.532c-0.086-0.706-0.169-1.416-0.226-2.136l-0.043-0.553c-0.013-0.156-0.03-0.31-0.03-0.466-->
+<!--c-0.04-0.623-0.07-1.246-0.097-1.882c-0.016-0.48-0.016-0.979-0.016-1.456c0-0.483,0-0.979,0.016-1.459-->
+<!--c0.027-0.639,0.056-1.259,0.097-1.885c0-0.154,0.016-0.31,0.03-0.464c0.013-0.186,0.029-0.37,0.043-0.553-->
+<!--c0.057-0.722,0.14-1.429,0.226-2.139c0.197-1.612,0.479-3.182,0.831-4.738c0.083-0.412,0.186-0.809,0.285-1.219-->
+<!--c0.054-0.199,0.097-0.397,0.153-0.593c0.086-0.31,0.17-0.61,0.253-0.922c0.339-1.2,0.723-2.406,1.159-3.565-->
+<!--c0.139-0.397,0.282-0.777,0.438-1.176c0.605-1.543,1.283-3.059,2.033-4.515c0.18-0.367,0.379-0.736,0.578-1.089-->
+<!--c0.212-0.394,0.436-0.793,0.664-1.173c0.18-0.329,0.363-0.653,0.562-0.963c0.213-0.356,0.425-0.709,0.651-1.049-->
+<!--c0.21-0.339,0.436-0.69,0.678-1.03c0.226-0.339,0.452-0.666,0.691-1.006c0.506-0.723,1.043-1.432,1.592-2.125-->
+<!--c0.212-0.267,0.428-0.523,0.637-0.793c0.522-0.636,1.057-1.243,1.608-1.853c0.538-0.61,1.089-1.187,1.665-1.769h0.013-->
+<!--c0.285-0.284,0.581-0.58,0.877-0.85c0.562-0.567,1.143-1.089,1.735-1.586c0.056-0.057,0.112-0.1,0.169-0.154-->
+<!--c0.565-0.513,1.159-0.99,1.751-1.443c0.339-0.27,0.664-0.526,1.003-0.779c0.28-0.216,0.578-0.426,0.874-0.639-->
+<!--c0.368-0.267,0.747-0.523,1.116-0.776c0.339-0.227,0.661-0.44,1-0.666c0.352-0.227,0.707-0.453,1.06-0.666-->
+<!--c0.309-0.181,0.621-0.367,0.93-0.55c0.412-0.226,0.804-0.453,1.202-0.679c0.363-0.197,0.731-0.383,1.1-0.567-->
+<!--c0.732-0.396,1.468-0.763,2.216-1.073c1.89-0.882,3.837-1.615,5.814-2.225c1.143-0.367,2.286-0.68,3.455-0.947-->
+<!--c0.947-0.226,1.92-0.424,2.896-0.596c0.761-0.127,1.522-0.24,2.299-0.34c0.847-0.113,1.694-0.197,2.568-0.256-->
+<!--c0.03-0.013,0.07-0.013,0.113-0.013c0.777-0.057,1.552-0.1,2.342-0.124c0.482-0.016,0.976-0.016,1.455-0.016-->
+<!--c0.637,0,1.286,0.016,1.933,0.04c0.256,0,0.506,0.016,0.761,0.03c0.185,0,0.368,0.013,0.551,0.03c0.17,0.013,0.323,0.03,0.479,0.041-->
+<!--c0.312,0.013,0.61,0.043,0.92,0.086c0.309,0.016,0.591,0.04,0.887,0.083c0.312,0.016,0.634,0.057,0.944,0.1-->
+<!--c0.565,0.083,1.116,0.172,1.64,0.256l1.129,0.167c3.09,0.582,6.08,1.419,8.946,2.535c0.309,0.113,0.648,0.253,0.974,0.38-->
+<!--c1.468,0.596,2.92,1.262,4.319,2.009l1.1,0.583c0.199,0.113,0.339,0.199,0.468,0.269c2.229,1.259,4.359,2.689,6.362,4.275-->
+<!--l1.342,1.116c0.438,0.369,0.887,0.75,1.326,1.149c0.285,0.24,0.564,0.506,0.834,0.763c0.575,0.537,1.14,1.103,1.694,1.683-->
+<!--l0.011-0.027c0.624,0.623,1.218,1.273,1.794,1.939l-2.02,2.023l-0.435,0.453l-4.332,4.331l-2.103,2.112l-2.116-2.112l-0.382-0.38-->
+<!--c-5.574-5.604-12.728-9.312-20.437-10.672H82.96v18.733H70.197V38.599L70.108,38.599z"/>-->
+<!--</svg>-->
+
+
+
+
+<!--<svg class="spin-logo-back" x="0px" y="0px" width="153.07px" height="153.07px" viewBox="0 0 153.07 153.07"-->
+<!--style="enable-background:new 0 0 153.07 153.07;" xml:space="preserve">-->
+<!--<defs>-->
+<!--</defs>-->
+<!--<path style="fill:#262626;" d="M0,76.538c0,42.2,34.334,76.532,76.536,76.532c42.201,0,76.534-34.332,76.534-76.532-->
+<!--C153.07,34.334,118.737,0,76.536,0C34.334,0,0,34.334,0,76.538z M82.873,38.599v18.792H70.11V38.658h-0.032-->
+<!--c-7.709,1.359-14.863,5.068-20.437,10.672l-0.382,0.38l-2.116,2.112L45.04,49.71l-4.332-4.331l-0.435-0.453l-2.02-2.023-->
+<!--c0.576-0.666,1.17-1.316,1.794-1.939l0.011,0.027c0.554-0.58,1.118-1.146,1.694-1.683c0.269-0.256,0.549-0.523,0.834-0.763-->
+<!--c0.438-0.399,0.887-0.78,1.326-1.149l1.342-1.116c2.003-1.586,4.133-3.015,6.362-4.275c0.129-0.07,0.269-0.156,0.468-0.269-->
+<!--l1.1-0.583c1.398-0.747,2.851-1.413,4.319-2.009c0.325-0.127,0.664-0.267,0.974-0.38c2.866-1.117,5.857-1.953,8.946-2.535-->
+<!--l1.129-0.167c0.524-0.084,1.076-0.173,1.64-0.256c0.309-0.043,0.632-0.084,0.944-0.1c0.296-0.043,0.578-0.068,0.887-0.083-->
+<!--c0.309-0.043,0.608-0.073,0.92-0.086c0.156-0.011,0.309-0.028,0.479-0.041c0.183-0.016,0.366-0.03,0.551-0.03-->
+<!--c0.256-0.014,0.506-0.03,0.761-0.03c0.648-0.024,1.296-0.04,1.933-0.04c0.479,0,0.973,0,1.455,0.016-->
+<!--c0.791,0.024,1.565,0.067,2.342,0.124c0.043,0,0.083,0,0.113,0.013c0.874,0.059,1.721,0.143,2.568,0.256-->
+<!--c0.777,0.1,1.538,0.213,2.299,0.34c0.976,0.172,1.949,0.369,2.896,0.596c1.17,0.267,2.312,0.58,3.455,0.947-->
+<!--c1.977,0.61,3.923,1.343,5.814,2.225c0.748,0.31,1.484,0.677,2.216,1.073c0.368,0.184,0.737,0.37,1.1,0.567-->
+<!--c0.398,0.226,0.791,0.453,1.202,0.679c0.309,0.183,0.621,0.37,0.93,0.55c0.352,0.213,0.707,0.44,1.06,0.666-->
+<!--c0.339,0.226,0.661,0.439,1,0.666c0.369,0.253,0.748,0.51,1.116,0.776c0.296,0.213,0.594,0.423,0.874,0.639-->
+<!--c0.339,0.254,0.665,0.51,1.003,0.779c0.591,0.453,1.186,0.93,1.751,1.443c0.057,0.054,0.113,0.097,0.169,0.154-->
+<!--c0.592,0.496,1.172,1.019,1.735,1.586c0.296,0.27,0.592,0.566,0.877,0.85h0.013c0.576,0.582,1.127,1.159,1.665,1.769-->
+<!--c0.551,0.61,1.086,1.216,1.608,1.853c0.21,0.27,0.425,0.526,0.637,0.793c0.549,0.693,1.086,1.402,1.592,2.125-->
+<!--c0.239,0.34,0.465,0.667,0.691,1.006c0.242,0.34,0.468,0.691,0.678,1.03c0.226,0.34,0.438,0.693,0.651,1.049-->
+<!--c0.199,0.31,0.382,0.634,0.562,0.963c0.228,0.38,0.451,0.78,0.664,1.173c0.199,0.353,0.398,0.723,0.578,1.089-->
+<!--c0.75,1.456,1.428,2.972,2.033,4.515c0.156,0.399,0.298,0.779,0.438,1.176c0.436,1.16,0.821,2.365,1.159,3.565-->
+<!--c0.083,0.313,0.167,0.612,0.253,0.922c0.056,0.197,0.099,0.394,0.153,0.593c0.1,0.41,0.202,0.807,0.285,1.219-->
+<!--c0.352,1.556,0.634,3.126,0.831,4.738c0.086,0.71,0.169,1.416,0.226,2.139c0.013,0.183,0.03,0.367,0.043,0.553-->
+<!--c0.013,0.154,0.03,0.31,0.03,0.464c0.04,0.626,0.07,1.246,0.097,1.885c0.016,0.48,0.016,0.976,0.016,1.459-->
+<!--c0,0.477,0,0.977-0.016,1.456c-0.027,0.636-0.056,1.259-0.097,1.882c0,0.156-0.016,0.31-0.03,0.466l-0.043,0.553-->
+<!--c-0.057,0.72-0.14,1.429-0.226,2.136c-0.113,0.849-0.24,1.699-0.379,2.532c-0.086,0.429-0.156,0.836-0.242,1.246-->
+<!--c-0.18,0.876-0.382,1.742-0.592,2.605c-0.213,0.763-0.422,1.527-0.664,2.295c-0.127,0.394-0.255,0.793-0.382,1.186-->
+<!--c-0.522,1.573-1.127,3.129-1.818,4.644c-0.172,0.367-0.352,0.75-0.524,1.116c-1.721,3.625-3.894,7.05-6.492,10.205-->
+<!--c-0.04,0.043-0.083,0.084-0.113,0.127c-1.016,1.246-2.116,2.465-3.286,3.625v0.014c-0.285,0.283-0.581,0.566-0.877,0.836-->
+<!--c-0.538,0.52-1.073,1.033-1.637,1.499c-0.353,0.326-0.732,0.637-1.1,0.947c-0.196,0.173-0.409,0.34-0.621,0.512-->
+<!--c-1.059,0.847-2.16,1.656-3.289,2.419c-0.296,0.197-0.578,0.383-0.874,0.58c-1.089,0.693-2.189,1.359-3.319,1.98-->
+<!--c-3.638,1.998-7.521,3.527-11.544,4.546c-0.409,0.114-0.815,0.211-1.226,0.31c-0.409,0.083-0.817,0.187-1.229,0.27-->
+<!--c-0.492,0.097-0.987,0.183-1.482,0.281c-0.761,0.129-1.522,0.243-2.299,0.339c-0.059,0.016-0.113,0.016-0.183,0.03-->
+<!--c-0.791,0.1-1.581,0.17-2.385,0.226c-0.03,0.014-0.07,0.014-0.113,0.014c-0.777,0.057-1.552,0.1-2.342,0.129-->
+<!--c-0.482,0.013-0.976,0.013-1.455,0.013c-0.637,0-1.286-0.013-1.933-0.043c-0.325,0-0.665-0.03-0.987-0.043-->
+<!--c-0.113,0-0.212,0-0.309-0.013l-0.468-0.043c-0.298-0.014-0.578-0.027-0.863-0.07c-0.944-0.086-1.801-0.183-2.608-0.297-->
+<!--c-0.298-0.043-0.591-0.086-0.887-0.143l-1.439-0.237c-0.172-0.03-0.355-0.059-0.524-0.103c-0.169-0.04-0.355-0.084-0.522-0.113-->
+<!--l-0.422-0.084c-0.172-0.04-0.339-0.084-0.524-0.113c-2.711-0.636-5.319-1.472-7.847-2.519l-0.355-0.157-->
+<!--c-0.363-0.156-0.718-0.31-1.057-0.453c-0.971-0.423-1.917-0.89-2.867-1.402l-1.083-0.577c-0.07-0.03-0.143-0.073-0.226-0.129-->
+<!--c-0.07-0.043-0.113-0.073-0.143-0.084c-1.552-0.879-3.06-1.842-4.515-2.888l-0.817-0.607c-0.199-0.143-0.396-0.286-0.581-0.44-->
+<!--c-0.226-0.17-0.465-0.34-0.691-0.526l-1.073-0.906c-0.352-0.297-0.704-0.607-1.059-0.92l-0.011,0.043-->
+<!--c-1.116-0.976-2.159-2.023-3.189-3.112c-0.467-0.496-0.949-0.99-1.401-1.515l1.401-1.4v-0.03l7.492-7.486l2.498,2.489-->
+<!--c5.571,5.604,12.722,9.297,20.411,10.658V95.767h12.763v18.468l0.133,0.001c7.817-1.316,15.072-5.038,20.717-10.715-->
+<!--c5.626-5.613,9.328-12.827,10.656-20.604H57.303V70.241h57.056v-0.194c-1.31-7.81-5.023-15.073-10.665-20.717-->
+<!--c-5.647-5.693-12.9-9.412-20.733-10.731L82.873,38.599z"/>-->
+<!--</svg>-->
+
+
+
+
+
+
+<!--</div>-->
+<!--</span>-->
+<!--</span>    -->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<header class="header panel">
+
+    <div class="header__back-bg"></div>
+    <div class="header__particles-bg" id="particles-js-star"></div>
+    <div class="header__particles-bg" id="particles-js"></div>
+    <div class="header__front-bg"></div><!-- include menu.pug-->
+    <div class="header__content">
+        <div class="header__content-info">
+            <div class="header__content-logo_wr"><img class="header__content-logo" src="<?= get_template_directory_uri() ?>/img/header-logo@1X.png" srcset="img/header-logo@2X.png 2x, img/header-logo@3X.png 3x"><img class="header__content-logo-front" src="<?= get_template_directory_uri() ?>/img/header-logo2@1X.png" srcset="img/header-logo2@2X.png 2x, img/header-logo2@3X.png 3x"></div>
+            <!-- <div class="header__content-timer" id="timer">
+                <div class="header__content_timer_item_wr"><span class="mainCabinet-dashboard__item" id="days">10</span></div>
+                <div class="header__content_timer_double-dotted">:</div>
+                <div class="header__content_timer_item_wr"><span class="mainCabinet-dashboard__item" id="hours">23</span></div>
+                <div class="header__content_timer_double-dotted">:</div>
+                <div class="header__content_timer_item_wr"><span class="mainCabinet-dashboard__item" id="minutes">59</span></div>
+                <div class="header__content_timer_double-dotted">:</div>
+                <div class="header__content_timer_item_wr"><span class="mainCabinet-dashboard__item" id="seconds">36</span></div>
+            </div> -->
+            <div class="header__title"><h1>The blockchain-based platform</h1>
+            </div>
+            <div class="header__desc">
+                <p class="header__desc_text">for world of fashion</p>
+            </div>
+        </div>
+        <div class="header__content-btns"><a data-fancybox class="header__btn watch-video-btn" target="_blank" href="https://youtu.be/QKATThibz5k">Watch video<img class="header__whatch-video__icon" src="<?= get_template_directory_uri() ?>/img/icon-play.svg"></a></div>
+    </div>
+</header>
+<div class="head-menu header__menu">
+    <div class="container head-menu__container">
+        <div class="head-menu__logo-and-social">
+            <div class="head-menu__logo_block"><a class="head-menu__logo_link" href="index.html"><img class="head-menu__logo_img" src="<?= get_template_directory_uri() ?>/img/logo@1X.png" srcset="img/logo@2X.png 2x, img/logo@3X.png 3x"></a></div>
+            <div class="head-menu__social_block">
+                <ul class="head-menu__social_ul">
+                    <!--                         <li class="head-menu__social_item"><a class="head-menu__social_item-link" href="/"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="head-menu__social_item"><a class="head-menu__social_item-link" href="/"><i class="fab fa-telegram-plane"></i></a></li> -->
+                    <li class="head-menu__social_item"><a class="head-menu__social_item-link" href="https://www.instagram.com/etalonium/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="head-menu__nav-and-language">
+            <nav class="head-menu__nav_block hidden-xs hidden-sm">
+                <ul class="head-menu__nav_ul">
+                    <li class="head-menu__nav_item"><a class="head-menu__nav_link" href="#about">About</a></li>
+                    <li class="head-menu__nav_item"><a class="head-menu__nav_link" href="#market-analys">Models</a></li>
+                    <li class="head-menu__nav_item"><a class="head-menu__nav_link" href="#events">Events</a></li>
+                </ul>
+            </nav>
+            <!--                 <div class="head-menu__swtch-lng_block swtch-lng">
+                                <div class="swtch-lng__title">Eng</div>
+                                <ul class="swtch-lng__ul">
+                                    <li class="swtch-lng__item">Rus</li>
+                                    <li class="swtch-lng__item">Ukr</li>
+                                    <li class="swtch-lng__item">Fr</li>
+                                </ul>
+                            </div> -->
+        </div>
+
+        <div class="xs-mnu-wrap">
+
+            <div id="nav-icon" class="hidden-md hidden-lg">
+            <span class="sandwich">
+                <span class="sw-topper"></span>
+                <span class="sw-bottom"></span>
+                <span class="sw-footer"></span>
+            </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="hidden-md hidden-lg my-small-nav">
+
+        <div class="vert-centered-wrap">
+            <div class="vert-centered">
+                <ul>
+                    <li><a class="head-menu__nav_link" href="#about">About</a></li>
+                    <li><a class="head-menu__nav_link" href="#market-analys">Models</a></li>
+                    <li><a class="head-menu__nav_link" href="#events">Events</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+</div>
