@@ -351,12 +351,35 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/customizer.php';
 
 
+// Post Types
+add_action( 'init', 'true_register_products' );
+function true_register_products() {
+    //  Models
+    $labels = array(
+        'name' => 'Models',
+        'singular_name' => 'Model', // админ панель Добавить->Функцию
+        'add_new' => 'Add model',
+        'add_new_item' => 'Add new model card', // заголовок тега <title>
+        'edit_item' => 'Edit model card',
+        'menu_name' => 'Models' // ссылка в меню в админке
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true, // благодаря этому некоторые параметры можно пропустить
+        'menu_icon' => 'dashicons-universal-access',
+        'menu_position' => 5,
+        'supports' => array( 'title', 'thumbnail')
+    );
+    register_post_type('header-contacts', $args);
+}
+
+
 
 
 
 add_action( 'rest_api_init', 'first_model_row_route' );
 function first_model_row_route() {
-    register_rest_route( 'http://localhost:8888/etalonium-gallery-wp/wp-json/wp/v2/', '/first-model-row/', array(
+    register_rest_route( 'http://localhost:8888/etalonium-gallery-wp/wp-json/wp/v2/', 'first-model-row', array(
             'methods' => 'GET',
             'callback' => 'first_model_row',
         )
