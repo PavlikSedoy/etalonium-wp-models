@@ -355,4 +355,9 @@
 </div>
 <!-- /.model-modal -->
 
+<!-- Model Modal Preloader -->
+<div class="model-modal__preloader" id="model-modal-preloader">
+    <img src="<?= get_template_directory_uri() ?>/img/loader.svg">
+</div>
+
 <?php get_footer() ?>
