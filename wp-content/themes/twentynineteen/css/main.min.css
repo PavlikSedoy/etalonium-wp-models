@@ -438,7 +438,7 @@ h1, h2, h3, h4 {
   margin-top: 2px;
 }
 
-.model-modal__arrow-left:hover, .model-modal__arrow-right:hover {
+.model-modal__arrow-left, .model-modal__arrow-right {
   transform: translateX(0);
   transition: .3s ease-in-out;
 }
