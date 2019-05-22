@@ -3406,6 +3406,81 @@ button {
     flex-basis: calc((100% - 30px)/2);
 }
 
+.model-modal__container {
+  height: 100%;
+}
+
+.model-modal__arrow-left_wr, .model-modal__arrow-right_wr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9991;
+  height: 50px;
+}
+
+.model-modal__arrow-right_wr {
+  right: 0;
+}
+
+.model-modal__arrow-left_wr {
+  left: 0;
+}
+
+.model-modal__content {
+  height: calc(100% - 160px);
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: center;
+}
+
+.model-modal__img {
+  flex-basis: 550px;
+  width: 400px;
+  height: 550px;
+}
+
+.model-modal__container .problems__swiper-slide_modal_close {
+  right: 0;
+  z-index: 9991;
+}
+
+.model-modal__info {
+  padding-left: 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.model-modal__title {
+  margin-top: 38px;
+  text-align: center;
+}
+
+.model-modal__params {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.model-modal__age {
+  margin-top: 0;
+}
+
+.model-modal__age > span {
+  margin-left: 20px;
+}
+
+.model-modal__age .model-modal__age_icon {
+  width: 8px;
+}
+
+.model-modal__age:first-child .model-modal__age_icon {
+  width: 35px;
+}
+
+.model-modal__age:last-child .model-modal__age_icon {
+  width: 27px;
+}
+
+
   /**/ }
 
 /* Small Devices, Tablets */

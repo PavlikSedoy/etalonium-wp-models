@@ -371,6 +371,24 @@ function true_register_products() {
         'supports' => array( 'title', 'thumbnail')
     );
     register_post_type('header-contacts', $args);
+
+    //  Events
+    $labels = array(
+        'name' => 'Events',
+        'singular_name' => 'Event', // админ панель Добавить->Функцию
+        'add_new' => 'Add event',
+        'add_new_item' => 'Add new event', // заголовок тега <title>
+        'edit_item' => 'Edit event',
+        'menu_name' => 'Events' // ссылка в меню в админке
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true, // благодаря этому некоторые параметры можно пропустить
+        'menu_icon' => 'dashicons-admin-site-alt2',
+        'menu_position' => 5,
+        'supports' => array( 'title', 'thumbnail', 'editor')
+    );
+    register_post_type('events', $args);
 }
 
 
