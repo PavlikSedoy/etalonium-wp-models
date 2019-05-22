@@ -44,7 +44,7 @@
                         $args = array(
                             'post_type' => 'header-contacts',
                             'order' => 'DESC',
-                            'posts_per_page' => 7
+                            'posts_per_page' => 700
                         );
                         $loop = new WP_Query($args);
                         while ($loop->have_posts()) : $loop->the_post();
@@ -53,7 +53,7 @@
                                 $n += 3;
                     ?>
 
-                        <article class="models__gallery_item" data-id="<?= get_the_ID() ?>">
+                        <article class="models__gallery_item" data-id="<?= $n-3 ?>">
                             <div class="model__gallery_item-bg_wr">
                                 <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
                             </div>
@@ -80,7 +80,7 @@
                         $args = array(
                             'post_type' => 'header-contacts',
                             'order' => 'DESC',
-                            'posts_per_page' => 7,
+                            'posts_per_page' => 700,
                             'offset' => 1
                         );
                         $loop = new WP_Query($args);
@@ -90,7 +90,7 @@
                                 $n += 3;
                     ?>
 
-                        <article class="models__gallery_item" data-id="<?= get_the_ID() ?>">
+                        <article class="models__gallery_item" data-id="<?= $n-2 ?>">
                             <div class="model__gallery_item-bg_wr">
                                 <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
                             </div>
@@ -117,7 +117,7 @@
                         $args = array(
                             'post_type' => 'header-contacts',
                             'order' => 'DESC',
-                            'posts_per_page' => 7,
+                            'posts_per_page' => 700,
                             'offset' => 2
                         );
                         $loop = new WP_Query($args);
@@ -127,7 +127,7 @@
                                 $n += 3;
                     ?>
 
-                        <article class="models__gallery_item" data-id="<?= get_the_ID() ?>">
+                        <article class="models__gallery_item" data-id="<?= $n-1 ?>">
                             <div class="model__gallery_item-bg_wr">
                                 <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
                             </div>
@@ -214,7 +214,7 @@
 <div class="model-modal" id="modal-model">
     <div class="container model-modal__container">
 
-        <div class="model-modal__arrow-left_wr">
+        <div class="model-modal__arrow-left_wr" id="model-modal-prev">
             <div class="model-modal__arrow-left">
                 <div class="swiper-btn-icon"><img class="swiper-icon" src="<?= get_template_directory_uri() ?>/img/icon-arrow.svg"></div>
                 <div class="swiper-btn-text">Prev</div>
@@ -226,10 +226,10 @@
 
             <div class="problems__swiper-slide_modal_close" id="modal-model-close"></div>
 
-            <div class="model-modal__img" style="background-image: url('<?= get_template_directory_uri() ?>/img/gallery/plitka-img.jpg');"></div>
+            <div class="model-modal__img" id="model-modal-image"></div>
 
             <div class="model-modal__info">
-                <h4 class="model-modal__title">Stephanie Skinner</h4>
+                <h4 class="model-modal__title" id="model-modal-title"></h4>
 
                 <div class="model-modal__params">
                     <div class="model-modal__age">
@@ -283,7 +283,7 @@
                                 </g>
 </svg>
                         </div>
-                        <span class="model-modal__age_text">Age: 24</span>
+                        <span class="model-modal__age_text">Age: <span id="model-modal-age"></span></span>
                     </div>
 
                     <div class="model-modal__age">
@@ -308,7 +308,7 @@
                                 </g>
 </svg>
                         </div>
-                        <span class="model-modal__height_text">Height: 175</span>
+                        <span class="model-modal__height_text">Height: <span id="model-modal-height"></span></span>
                     </div>
 
                     <div class="model-modal__age">
@@ -334,7 +334,7 @@
                                 </g>
 </svg>
                         </div>
-                        <span class="model-modal__location_text">Location: Kyiv</span>
+                        <span class="model-modal__location_text">Location: <span id="model-modal-location"></span></span>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@
         <!-- /.model-modal__content -->
 
 
-        <div class="model-modal__arrow-right_wr">
+        <div class="model-modal__arrow-right_wr" id="model-modal-next">
             <div class="model-modal__arrow-right">
                 <div class="swiper-btn-text">Next</div>
                 <div class="swiper-btn-icon"><img class="swiper-icon" src="<?= get_template_directory_uri() ?>/img/icon-arrow.svg"></div>

@@ -398,3 +398,48 @@ function get_models(){
 add_action('wp_ajax_get-models', 'get_models'); // wp_ajax_{значение параметра action}
 // wp_ajax_nopriv_ - только для незарегистрированных, т е для залогиненных он работать не будет (результатом выполнения запроса будет 0)
 add_action('wp_ajax_nopriv_get-model', 'get_models'); // wp_ajax_nopriv_{значение параметра action}
+
+
+
+function my_endpoint( $request_data ) {
+
+    // setup query argument
+    $page = $_GET['page'];
+    $args = array(
+        'post_type' => 'header-contacts',
+        'posts_per_page' => 1,
+        'offset' => $page,
+    );
+
+    // get posts
+    $posts = get_posts($args);
+
+    // add custom field data to posts array
+    foreach ($posts as $key => $post) {
+        $posts[$key]->acf = get_fields($post->ID);
+        $posts[$key]->link = get_permalink($post->ID);
+        $posts[$key]->image = get_the_post_thumbnail_url($post->ID);
+    }
+    return $posts;
+}
+
+// register the endpoint
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'my_endpoint/v1', '/my_post_type/', array(
+            'methods' => 'GET',
+            'callback' => 'my_endpoint',
+        )
+    );
+});
+
+function get_models_lenght() {
+
+    return wp_count_posts('header-contacts');
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route('get_models_lenght/v1', '/models/', array(
+        'methods' => 'GET',
+        'callback' => 'get_models_lenght',
+    ));
+});
