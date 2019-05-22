@@ -174,7 +174,7 @@
 <!--</div>-->
 
 
-<header class="header panel">
+<header class="header panel" id="home">
 
     <div class="header__back-bg"></div>
     <div class="header__particles-bg" id="particles-js-star"></div>
@@ -182,7 +182,7 @@
     <div class="header__front-bg"></div><!-- include menu.pug-->
     <div class="header__content">
         <div class="header__content-info">
-            <div class="header__content-logo_wr"><img class="header__content-logo" src="<?= get_template_directory_uri() ?>/img/header-logo@1X.png" srcset="img/header-logo@2X.png 2x, img/header-logo@3X.png 3x"><img class="header__content-logo-front" src="<?= get_template_directory_uri() ?>/img/header-logo2@1X.png" srcset="img/header-logo2@2X.png 2x, img/header-logo2@3X.png 3x"></div>
+            <div class="header__content-logo_wr"><img class="header__content-logo" src="<?= get_template_directory_uri() ?>/img/header-logo@1X.png" srcset="<?= get_template_directory_uri() ?>/img/header-logo@2X.png 2x, <?= get_template_directory_uri() ?>/img/header-logo@3X.png 3x"><img class="header__content-logo-front" src="<?= get_template_directory_uri() ?>/img/header-logo2@1X.png" srcset="<?= get_template_directory_uri() ?>/img/header-logo2@2X.png 2x, <?= get_template_directory_uri() ?>/img/header-logo2@3X.png 3x"></div>
             <!-- <div class="header__content-timer" id="timer">
                 <div class="header__content_timer_item_wr"><span class="mainCabinet-dashboard__item" id="days">10</span></div>
                 <div class="header__content_timer_double-dotted">:</div>
@@ -204,7 +204,7 @@
 <div class="head-menu header__menu">
     <div class="container head-menu__container">
         <div class="head-menu__logo-and-social">
-            <div class="head-menu__logo_block"><a class="head-menu__logo_link" href="index.html"><img class="head-menu__logo_img" src="<?= get_template_directory_uri() ?>/img/logo@1X.png" srcset="img/logo@2X.png 2x, img/logo@3X.png 3x"></a></div>
+            <div class="head-menu__logo_block"><a class="head-menu__logo_link" href="index.html"><img class="head-menu__logo_img" src="<?= get_template_directory_uri() ?>/img/logo@1X.png" srcset="<?= get_template_directory_uri() ?>/img/logo@2X.png 2x, <?= get_template_directory_uri() ?>/img/logo@3X.png 3x"></a></div>
             <div class="head-menu__social_block">
                 <ul class="head-menu__social_ul">
                     <!--                         <li class="head-menu__social_item"><a class="head-menu__social_item-link" href="/"><i class="fab fa-facebook-f"></i></a></li>

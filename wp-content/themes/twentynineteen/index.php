@@ -9,17 +9,17 @@
         <div id="particles-js-about3"></div>
         <div class="container about__container">
             <div class="col-xs-12 col-sm-6 about__row" data-aos="fade-up" data-aos-offset="200" data-aos-duration="750"><h2 class="about__title section-title">About project</h2>
-                <article class="about__etalonium"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/e@1X.png" srcset="img/e@2X.png 2x, img/e@3X.png 3x">
+                <article class="about__etalonium"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/e@1X.png" srcset="<?= get_template_directory_uri() ?>/img/e@2X.png 2x, <?= get_template_directory_uri() ?>/img/e@3X.png 3x">
                     <p class="about__paragraph"><span class="about__paragraph_first-letter">&rsquo;talonium</span>- a unique stock of model business traffic and a decentralized online platform in the world of fashion.<br>A revolutionary social lift with an integrated platform for selling services - model&rsquo;s contracts, designers, agents and other talents in the fashion industry.</p>
                 </article>
             </div>
             <div class="col-xs-12 col-sm-6 about__row" data-aos="fade-up" data-aos-offset="500" data-aos-duration="750">
                 <article class="about__mission">
-                    <div class="about__mission_text"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/M@1X.png" srcset="img/M@2X.png 2x, img/M@3X.png 3x">
+                    <div class="about__mission_text"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/M@1X.png" srcset="<?= get_template_directory_uri() ?>/img/M@2X.png 2x, <?= get_template_directory_uri() ?>/img/M@3X.png 3x">
                         <p class="about__paragraph-mission"><span class="about__paragraph_first-letter">ission:</span>To build a new, protected fashion industry and create a non-corrupt way to develop one&ldquo;s dream of success and fame.</p>
                     </div>
                 </article>
-                <article class="about__etalonium-coin"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/e@1X.png" srcset="img/e@2X.png 2x, img/e@3X.png 3x">
+                <article class="about__etalonium-coin"><img class="about__big-letter" src="<?= get_template_directory_uri() ?>/img/e@1X.png" srcset="<?= get_template_directory_uri() ?>/img/e@2X.png 2x, <?= get_template_directory_uri() ?>/img/e@3X.png 3x">
                     <p class="about__paragraph about__paragraph-coin"><span class="about__paragraph_first-letter">talonium Coin</span>- allows you to tokenize your progress and form an objective value, earning a place in the world ranking.</p>
                 </article><!-- <a class="about__btn_red btn_red" href="/">About product</a> -->
             </div><img class="about__bottom-img" src="<?= get_template_directory_uri() ?>/img/about-photo.jpg"></div>
@@ -141,6 +141,85 @@
                         endif;
                         endwhile;
                         wp_reset_query();
+                    ?>
+
+                </div>
+                <!-- /.models__gallery_col -->
+
+            </div>
+            <!-- /.models__gallery-wr -->
+
+
+            <div class="models__gallery_tablet">
+
+                <div class="models__gallery_col">
+
+                    <?php
+                    $i = 0;
+                    $n = 1;
+                    $args = array(
+                        'post_type' => 'header-contacts',
+                        'order' => 'DESC',
+                        'posts_per_page' => 700
+                    );
+                    $loop = new WP_Query($args);
+                    while ($loop->have_posts()) : $loop->the_post();
+                        $i++;
+                        if ($i == $n) :
+                            $n += 2;
+                            ?>
+
+                            <article class="models__gallery_item" data-id="<?= $n-2 ?>">
+                                <div class="model__gallery_item-bg_wr">
+                                    <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
+                                </div>
+                                <div class="models__gallery_item_title">
+                                    <h4><?php the_title() ?></h4>
+                                </div>
+                            </article>
+                            <!-- /.models__gallery_item model-item -->
+
+                        <?php
+                        endif;
+                    endwhile;
+                    wp_reset_query();
+                    ?>
+
+                </div>
+                <!-- /.models__gallery_col -->
+
+                <div class="models__gallery_col">
+
+                    <?php
+                    $i = 0;
+                    $n = 1;
+                    $args = array(
+                        'post_type' => 'header-contacts',
+                        'order' => 'DESC',
+                        'posts_per_page' => 700,
+                        'offset' => 1
+                    );
+                    $loop = new WP_Query($args);
+                    while ($loop->have_posts()) : $loop->the_post();
+                        $i++;
+                        if ($i == $n) :
+                            $n += 2;
+                            ?>
+
+                            <article class="models__gallery_item" data-id="<?= $n-1 ?>">
+                                <div class="model__gallery_item-bg_wr">
+                                    <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
+                                </div>
+                                <div class="models__gallery_item_title">
+                                    <h4><?php the_title() ?></h4>
+                                </div>
+                            </article>
+                            <!-- /.models__gallery_item model-item -->
+
+                        <?php
+                        endif;
+                    endwhile;
+                    wp_reset_query();
                     ?>
 
                 </div>

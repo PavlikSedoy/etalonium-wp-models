@@ -282,6 +282,10 @@ h1, h2, h3, h4 {
   justify-content: space-between;
 }
 
+.models__gallery_tablet {
+    display: none;
+}
+
 /* Model Gallery Column */
 .models__gallery_col {
   flex-basis: calc((100% - 60px)/3);
@@ -3386,6 +3390,21 @@ button {
       margin-bottom: 10px;
       display: inline-block;
   }
+
+/* Models Gallery */
+.models__gallery {
+    display: none;
+}
+
+.models__gallery_tablet {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.models__gallery_col {
+    flex-basis: calc((100% - 30px)/2);
+}
 
   /**/ }
 
