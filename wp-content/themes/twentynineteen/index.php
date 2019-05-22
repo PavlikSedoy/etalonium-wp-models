@@ -227,9 +227,53 @@
 
             </div>
             <!-- /.models__gallery-wr -->
+
+
+
+            <div class="models__gallery_mobile">
+
+                <div class="models__gallery_col">
+
+                    <?php
+                        $n = 0;
+                        $args = array(
+                            'post_type' => 'header-contacts',
+                            'order' => 'DESC',
+                            'posts_per_page' => 700
+                        );
+                        $loop = new WP_Query($args);
+                        while ($loop->have_posts()) : $loop->the_post();
+                        $n++;
+                    ?>
+
+                        <article class="models__gallery_item" data-id="<?= $n ?>">
+                            <div class="model__gallery_item-bg_wr">
+                                <div class="models__gallery_item-bg" style="background-image: url('<?= get_the_post_thumbnail_url() ?>');"></div>
+                            </div>
+                            <div class="models__gallery_item_title">
+                                <h4><?php the_title() ?></h4>
+                            </div>
+                        </article>
+                        <!-- /.models__gallery_item model-item -->
+
+                    <?php
+                        endwhile;
+                        wp_reset_query();
+                    ?>
+
+                </div>
+                <!-- /.models__gallery_col -->
+
+
+
+            </div>
+            <!-- /.models__gallery-wr -->
         </div>
 
     </section>
+
+
+
 
 
     <section id="events" class="news">
