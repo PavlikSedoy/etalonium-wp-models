@@ -3533,6 +3533,92 @@ button {
         width: 100%;
     }
 
+  .model-modal__container .problems__swiper-slide_modal_close {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .model-modal__container .problems__swiper-slide_modal_close:before, .model-modal__container .problems__swiper-slide_modal_close:after {
+    top: 0px;
+    left: 18px;
+  }
+
+  .model-modal__img {
+    height: 440px;
+    flex-basis: 440px;
+    position: relative;
+  }
+
+  .model-modal__img:after {
+    position: absolute;
+    content: '';
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    height: 90px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .model-modal__title {
+    position: absolute;
+    margin: 0;
+    top: -70px;
+    left: 20px;
+    font-size: 25px;
+    letter-spacing: .5px;
+  }
+
+  .model-modal__info {
+    height: calc(100% - 440px);
+    flex-basis: calc(100% - 440px);
+  }
+
+  .model-modal__info {
+    position: relative;
+  }
+
+  .model-modal__params {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .model-modal__age .model-modal__age_icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .model-modal__age:last-child .model-modal__age_icon {
+    width: 35px;
+  }
+
+  .model-modal__age:first-child .model-modal__age_icon {
+    width: 35px;
+  }
+
+  .model-modal__age_icon svg {
+    max-height: 25px;
+  }
+
+  .model-modal__age > span {
+    font-size: 16px;
+  }
+
+  .model-modal__arrow-left_wr, .model-modal__arrow-right_wr {
+    top: auto;
+    transform: translateY(0);
+    bottom: 0;
+  }
+
+  .model-modal__arrow-right_wr {
+    right: 10px;
+  }
+
+  .model-modal__arrow-left_wr {
+    left: 10px;
+  }
+
 
   /**/ }
 
@@ -3747,6 +3833,8 @@ button {
 .img-girls-paris img {
   width: 100%;
 }
+
+
 
 }
 
